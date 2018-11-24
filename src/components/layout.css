@@ -13,7 +13,7 @@ body {
   margin: 50px;
 }
 #layout-container__image {
-  /* justify-content: flex-start; */
+ 
 }
 #layout-container__footer {
   align-self: flex-end;

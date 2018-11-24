@@ -34,10 +34,15 @@ const Layout = ({ children, image }) => (
             {children}
           </div>
           <footer id="layout-container__footer">
-            <p>hello</p>
+            <p>footer</p>
           </footer>
         </div>
-        <Img id="layout-container__image" fluid={image} />
+        <Img 
+          id="layout-container__image" 
+          fadeIn 
+          imgStyle={{ width: `auto`, position: `fixed`, left: `none`}} 
+          fluid={image} 
+        />
       </div>
     )}
   />
