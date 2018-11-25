@@ -11,14 +11,12 @@ import './layout.css'
 
 function newImageOnLoad(images) {
   let imageArray = []
-
+  const randomIndex = Math.floor(Math.random(imageArray - 1) * 20)
+  
   Object.values(images).forEach(image => {
     imageArray.push(image)
   })
-  console.log(imageArray)
-
-  const randomIndex = Math.random(imageArray.length - 1)
-
+  console.log(randomIndex)
   return (
     <Img
       id="layout-container__image"
@@ -53,7 +51,7 @@ const Layout = ({ children, images }) => (
           />
           <LayoutFooter />
         </div>
-        {true && (
+        {images && (
           newImageOnLoad(images)
         )}
       </div>
