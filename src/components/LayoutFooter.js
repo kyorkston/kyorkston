@@ -1,43 +1,42 @@
 import React from 'react'
-import { connect } from 'react-fela'
+import styled from 'styled-components'
 
-const LayoutFooter = ({ styles }) => (
-  <footer className={styles.container}>
+const LinkList = styled.ul`
+    margin: 0;
+    list-styles: none;
+    color: black;
+`
+
+const LinkItem = styled.a`
+    padding-right: 10px;
+`
+
+const SmallLink = styled.a`
+    text-transform: uppercase;
+`
+
+const LayoutFooter = () => (
+  <footer>
     -
-    <ul className={styles.linkList} id="footer-links">
-      <a className={styles.linkItem} href="https://twitter.com/kristiejaywhy">
+    <LinkList>
+      <LinkItem href="https://twitter.com/kristiejaywhy">
         Twitter
-      </a>
-      <a className={styles.linkItem} href="https://github.com/kyorkston">
+      </LinkItem>
+      <LinkItem href="https://github.com/kyorkston">
         Github
-      </a>
-      <a href="https://www.linkedin.com/in/kristie-yorkston-a7a193138/">
+      </LinkItem>
+      <LinkItem href="https://www.linkedin.com/in/kristie-yorkston-a7a193138/">
         LinkedIn
-      </a>
-    </ul>
+      </LinkItem>
+    </LinkList>
     <small>
-      <a
-        className={styles.smallLink}
+      <SmallLink
         href="https://github.com/kyorkston/kyorkston"
       >
         Github Repo
-      </a>
+      </SmallLink>
     </small>
   </footer>
 )
 
-const styles = {
-  linkList: () => ({
-    margin: '0',
-    listStyle: 'none',
-    color: 'black'
-  }),
-  linkItem: () => ({
-    paddingRight: '10px',
-  }),
-  smallLink: () => ({
-    textTransform: 'uppercase',
-  }),
-}
-
-export default connect(styles)(LayoutFooter)
+export default LayoutFooter
