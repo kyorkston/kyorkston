@@ -12,19 +12,6 @@ body {
 #layout-container__header {
   margin: 50px;
 }
-#footer-links {
-  margin: 0;
-  list-style: none;
-}
-#footer-links__anchor-item {
-  padding-right: 10px;
-}
-#footer-links__small-anchor-item {
-  text-transform: uppercase;
-}
-#layout-container__footer {
-  align-self: flex-end;
-}
 article,
 aside,
 details,

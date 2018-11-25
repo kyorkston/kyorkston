@@ -15,6 +15,7 @@
     "gatsby-transformer-sharp": "^2.1.4",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
+    "react-fela": "^8.0.4",
     "react-helmet": "^5.2.0"
   },
   "keywords": [
