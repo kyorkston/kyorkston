@@ -42,12 +42,14 @@ const Layout = ({ children, layoutImage }) => (
             <small id="footer-links__small-anchor-item"><a>Github Repo</a></small>
           </footer>
         </div>
-        <Img 
-          id="layout-container__image" 
-          fadeIn 
-          imgStyle={{ width: `auto`, position: `fixed`, left: `none`}} 
-          fluid={layoutImage} 
-        />
+        {layoutImage && 
+          <Img 
+            id="layout-container__image" 
+            fadeIn 
+            imgStyle={{ width: `auto`, position: `fixed`, left: `none`}} 
+            fluid={layoutImage} 
+          />
+        }
       </div>
     )}
   />
