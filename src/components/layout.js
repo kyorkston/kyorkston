@@ -11,7 +11,7 @@ import './layout.css'
 
 function newImageOnLoad(images) {
   let imageArray = []
-  const randomIndex = Math.floor(Math.random(imageArray - 1) * 20)
+  const randomIndex = Math.floor(Math.random(imageArray.length - 1) * 10)
   
   Object.values(images).forEach(image => {
     imageArray.push(image)
@@ -21,7 +21,7 @@ function newImageOnLoad(images) {
     <Img
       id="layout-container__image"
       fadeIn
-      imgStyle={{ width: `auto`, position: `fixed`, left: `none` }}
+      imgStyle={{ width: `auto`, position: `fixed`, left: `none`, paddingLeft: '100px' }}
       fluid={imageArray[randomIndex].childImageSharp.fluid}
     />
   )
@@ -61,7 +61,7 @@ const Layout = ({ children, images }) => (
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  layoutImage: PropTypes.object,
+  images: PropTypes.object
 }
 
 export default Layout
