@@ -2,12 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-// import image from '../images/IMG_2748.jpg'
 import Img from "gatsby-image"
 
 import './layout.css'
 
-const Layout = ({ children, image }) => (
+const Layout = ({ children, layoutImage }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -34,14 +33,20 @@ const Layout = ({ children, image }) => (
             {children}
           </div>
           <footer id="layout-container__footer">
-            <p>footer</p>
+          -
+            <ul id="footer-links">
+              <a id="footer-links__anchor-item" href="https://twitter.com/kristiejaywhy">Twitter</a>
+              <a id="footer-links__anchor-item" href="https://github.com/kyorkston">Github</a>
+              <a href="https://www.linkedin.com/in/kristie-yorkston-a7a193138/">LinkedIn</a>
+            </ul>
+            <small id="footer-links__small-anchor-item"><a>Github Repo</a></small>
           </footer>
         </div>
         <Img 
           id="layout-container__image" 
           fadeIn 
           imgStyle={{ width: `auto`, position: `fixed`, left: `none`}} 
-          fluid={image} 
+          fluid={layoutImage} 
         />
       </div>
     )}
