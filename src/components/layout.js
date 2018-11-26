@@ -2,11 +2,32 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-import Img from "gatsby-image"
+import Img from 'gatsby-image'
+
+import LayoutHead from './LayoutHead'
+import LayoutFooter from './LayoutFooter'
 
 import './layout.css'
 
-const Layout = ({ children, layoutImage }) => (
+function newImageOnLoad(images) {
+  let imageArray = []
+  const randomIndex = Math.floor(Math.random(imageArray.length - 1) * 10)
+  
+  Object.values(images).forEach(image => {
+    imageArray.push(image)
+  })
+  console.log(randomIndex)
+  return (
+    <Img
+      id="layout-container__image"
+      fadeIn
+      imgStyle={{ width: `auto`, position: `fixed`, left: `none`, paddingLeft: '100px' }}
+      fluid={imageArray[randomIndex].childImageSharp.fluid}
+    />
+  )
+}
+
+const Layout = ({ children, images }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -19,37 +40,20 @@ const Layout = ({ children, layoutImage }) => (
     `}
     render={data => (
       <div id="layout-container">
-        <Helmet
-          title={data.site.siteMetadata.title}
-        >
+        <Helmet title={data.site.siteMetadata.title}>
           <html lang="en" />
         </Helmet>
-        <div id="layout-container__header">
-          <div>
-            <div>
-              <h1>{data.site.siteMetadata.title}</h1>
-              <span>-</span>
-            </div>
-            {children}
-          </div>
-          <footer id="layout-container__footer">
-          -
-            <ul id="footer-links">
-              <a id="footer-links__anchor-item" href="https://twitter.com/kristiejaywhy">Twitter</a>
-              <a id="footer-links__anchor-item" href="https://github.com/kyorkston">Github</a>
-              <a href="https://www.linkedin.com/in/kristie-yorkston-a7a193138/">LinkedIn</a>
-            </ul>
-            <small id="footer-links__small-anchor-item"><a>Github Repo</a></small>
-          </footer>
-        </div>
-        {layoutImage && 
-          <Img 
-            id="layout-container__image" 
-            fadeIn 
-            imgStyle={{ width: `auto`, position: `fixed`, left: `none`}} 
-            fluid={layoutImage} 
+        <div>
+          <LayoutHead
+            id="layout-container__header"
+            data={data}
+            children={children}
           />
-        }
+          <LayoutFooter />
+        </div>
+        {images && (
+          newImageOnLoad(images)
+        )}
       </div>
     )}
   />
@@ -57,6 +61,7 @@ const Layout = ({ children, layoutImage }) => (
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  images: PropTypes.object
 }
 
 export default Layout

@@ -4,25 +4,44 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 
 const IndexPage = ({ data }) => (
-  <Layout
-    layoutImage={data.file.childImageSharp.fluid}
-  >
+  <Layout images={data}>
     <i>Under construction</i>
   </Layout>
 )
 
 export default IndexPage
 
-export const query = graphql`
-  query {
-   file(
-      relativePath: { regex: "/layoutImage.jpg/" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 800) {
-          ...GatsbyImageSharpFluid
-        }
+export const fluidImage = graphql`
+  fragment fluidImage on File {
+    childImageSharp {
+      fluid(maxWidth: 800) {
+        ...GatsbyImageSharpFluid
       }
+    }
+  }
+`
+export const imageQuery = graphql`
+  query {
+    roadTrip: file(relativePath: { regex: "/roadTrip.jpg/" }) {
+      ...fluidImage
+    }
+    amsterdam: file(relativePath: { regex: "/amsterdam.jpg/" }) {
+      ...fluidImage
+    }
+    bathStreet: file(relativePath: { regex: "/bathStreet.jpg/" }) {
+      ...fluidImage
+    }
+    edinburghUni: file(relativePath: { regex: "/edinburghUni.jpg/" }) {
+      ...fluidImage
+    }
+    parkheadChurch: file(relativePath: { regex: "/parkheadChurch.jpg/" }) {
+      ...fluidImage
+    }
+    queensParkChurch: file(relativePath: { regex: "/queensParkChurch.jpg/" }) {
+      ...fluidImage
+    }
+    shawlandsImage: file(relativePath: { regex: "/shawlandsImage.jpg/" }) {
+      ...fluidImage
     }
   }
 `

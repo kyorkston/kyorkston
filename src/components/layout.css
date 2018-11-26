@@ -7,22 +7,14 @@ body {
   background-color: #eee;
 }
 #layout-container {
+  margin: 20px;
   display: flex;
 }
 #layout-container__header {
   margin: 50px;
 }
-#footer-links {
-  margin: 0;
-  list-style: none;
-}
-#footer-links__anchor-item {
-  padding-right: 10px;
-}
-#footer-links__small-anchor-item {
-  text-transform: uppercase;
-}
-#layout-container__footer {
+#layout-container__image {
+  display: flex;
   align-self: flex-end;
 }
 article,
