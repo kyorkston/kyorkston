@@ -5,6 +5,7 @@ const LinkList = styled.ul`
     margin: 0;
     list-styles: none;
     color: black;
+    padding-left: 0;
 `
 
 const LinkItem = styled.a`

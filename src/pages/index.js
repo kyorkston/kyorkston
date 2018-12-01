@@ -2,7 +2,7 @@ import React from 'react'
 
 import Layout from '../components/Layout/layout.js'
 
-const IndexPage = ({data}) => (
+const IndexPage = ({ data }) => (
   <Layout images={data}>
     <i>Under construction</i>
   </Layout>
