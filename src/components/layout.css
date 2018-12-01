@@ -6,17 +6,6 @@ html {
 body {
   background-color: #eee;
 }
-#layout-container {
-  margin: 20px;
-  display: flex;
-}
-#layout-container__header {
-  margin: 50px;
-}
-#layout-container__image {
-  display: flex;
-  align-self: flex-end;
-}
 article,
 aside,
 details,
