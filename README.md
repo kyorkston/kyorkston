@@ -5,7 +5,7 @@
   </a>
 </h1>
 
-## U+1F528 Develop project
+## :hammer: Develop project
 
 1.  Start development server:
 
