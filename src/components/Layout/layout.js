@@ -17,13 +17,18 @@ const Container = styled.div`
 `
 
 function newImageOnLoad(images) {
-  let imageArray = []  
+  let imageArray = []
+  let randomIndex
 
   Object.values(images).forEach(image => {
     imageArray.push(image)
   })
 
-  const randomIndex =  Math.floor(Math.random(imageArray.length - 1) * 10)
+  randomIndex =  Math.floor(Math.random(imageArray.length - 1) * 10)
+
+  if (!(randomIndex >= 0 && randomIndex <= 6)) {
+    randomIndex = 0
+  }
 
   return (
     <Img
