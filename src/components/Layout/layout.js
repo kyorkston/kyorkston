@@ -13,21 +13,24 @@ import './layout.css'
 const Container = styled.div`
   margin: 20px;
   display: flex;
+  font-family: Courier New;
 `
 
 function newImageOnLoad(images) {
-  let imageArray = []
-  const randomIndex = Math.floor(Math.random(imageArray.length - 1) * 10)
-  
+  let imageArray = []  
+
   Object.values(images).forEach(image => {
     imageArray.push(image)
   })
+
+  const randomIndex =  Math.floor(Math.random(imageArray.length - 1) * 10)
+  console.log(randomIndex)
 
   return (
     <Img
       style={{display: 'flex', alignSelf: 'flex-end'}}
       fadeIn
-      imgStyle={{ width: `auto`, position: `fixed`, left: `none`, paddingLeft: '100px' }}
+      imgStyle={{ width: `auto`, position: `fixed`, left: `none`, paddingLeft: '40px' }}
       fluid={imageArray[randomIndex].childImageSharp.fluid}
     />
   )

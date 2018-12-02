@@ -20,14 +20,14 @@ const LayoutFooter = () => (
   <footer>
     -
     <LinkList>
-      <LinkItem href="https://twitter.com/kristiejaywhy">
-        Twitter
-      </LinkItem>
       <LinkItem href="https://github.com/kyorkston">
         Github
       </LinkItem>
       <LinkItem href="https://www.linkedin.com/in/kristie-yorkston-a7a193138/">
         LinkedIn
+      </LinkItem>
+      <LinkItem href="https://twitter.com/kristiejaywhy">
+        Twitter
       </LinkItem>
     </LinkList>
     <small>

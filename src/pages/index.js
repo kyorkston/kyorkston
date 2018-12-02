@@ -1,10 +1,11 @@
 import React from 'react'
 
-import Layout from '../components/Layout/layout.js'
+import Layout from '../components/Layout/layout'
+import Bio from '../components/Bio/bio'
 
 const IndexPage = ({ data }) => (
   <Layout images={data}>
-    <i>Under construction</i>
+    <Bio />
   </Layout>
 )
 
@@ -13,7 +14,7 @@ export default IndexPage
 export const fluidImage = graphql`
   fragment fluidImage on File {
     childImageSharp {
-      fluid(maxWidth: 800) {
+      fluid(maxWidth: 700) {
         ...GatsbyImageSharpFluid
       }
     }
