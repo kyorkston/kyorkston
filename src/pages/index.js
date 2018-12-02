@@ -1,11 +1,11 @@
 import React from 'react'
-import { graphql } from 'gatsby'
 
-import Layout from '../components/layout'
+import Layout from '../components/Layout/layout'
+import Bio from '../components/Bio/bio'
 
 const IndexPage = ({ data }) => (
   <Layout images={data}>
-    <i>Under construction</i>
+    <Bio />
   </Layout>
 )
 
@@ -14,12 +14,13 @@ export default IndexPage
 export const fluidImage = graphql`
   fragment fluidImage on File {
     childImageSharp {
-      fluid(maxWidth: 800) {
+      fluid(maxWidth: 700) {
         ...GatsbyImageSharpFluid
       }
     }
   }
 `
+
 export const imageQuery = graphql`
   query {
     roadTrip: file(relativePath: { regex: "/roadTrip.jpg/" }) {

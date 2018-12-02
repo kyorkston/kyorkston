@@ -3,25 +3,33 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import styled from 'styled-components'
 
 import LayoutHead from './LayoutHead'
 import LayoutFooter from './LayoutFooter'
 
 import './layout.css'
 
+const Container = styled.div`
+  margin: 20px;
+  display: flex;
+  font-family: Courier New;
+`
+
 function newImageOnLoad(images) {
-  let imageArray = []
-  const randomIndex = Math.floor(Math.random(imageArray.length - 1) * 10)
-  
+  let imageArray = []  
+
   Object.values(images).forEach(image => {
     imageArray.push(image)
   })
-  console.log(randomIndex)
+
+  const randomIndex =  Math.floor(Math.random(imageArray.length - 1) * 10)
+
   return (
     <Img
-      id="layout-container__image"
+      style={{display: 'flex', alignSelf: 'flex-end'}}
       fadeIn
-      imgStyle={{ width: `auto`, position: `fixed`, left: `none`, paddingLeft: '100px' }}
+      imgStyle={{ width: `auto`, position: `fixed`, left: `none`, paddingLeft: '40px' }}
       fluid={imageArray[randomIndex].childImageSharp.fluid}
     />
   )
@@ -39,13 +47,12 @@ const Layout = ({ children, images }) => (
       }
     `}
     render={data => (
-      <div id="layout-container">
+      <Container>
         <Helmet title={data.site.siteMetadata.title}>
           <html lang="en" />
         </Helmet>
         <div>
           <LayoutHead
-            id="layout-container__header"
             data={data}
             children={children}
           />
@@ -54,7 +61,7 @@ const Layout = ({ children, images }) => (
         {images && (
           newImageOnLoad(images)
         )}
-      </div>
+      </Container>
     )}
   />
 )
