@@ -24,7 +24,6 @@ function newImageOnLoad(images) {
   })
 
   const randomIndex =  Math.floor(Math.random(imageArray.length - 1) * 10)
-  console.log(randomIndex)
 
   return (
     <Img
