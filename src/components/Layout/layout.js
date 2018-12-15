@@ -26,7 +26,7 @@ function newImageOnLoad(images) {
 
   randomIndex =  Math.floor(Math.random(imageArray.length - 1) * 10)
 
-  if (!(randomIndex >= 0 && randomIndex <= 6)) {
+  if (!(randomIndex >= 0 && randomIndex <= imageArray.length)) {
     randomIndex = 0
   }
 
@@ -63,9 +63,7 @@ const Layout = ({ children, images }) => (
           />
           <LayoutFooter />
         </div>
-        {images && (
-          newImageOnLoad(images)
-        )}
+        {images && newImageOnLoad(images)}
       </Container>
     )}
   />
