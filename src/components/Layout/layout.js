@@ -26,10 +26,10 @@ function newImageOnLoad(images) {
 
   randomIndex =  Math.floor(Math.random(imageArray.length - 1) * 10)
 
-  if (!(randomIndex >= 0 && randomIndex <= imageArray.length)) {
+  if (!(randomIndex >= 0 && randomIndex <= imageArray.length - 1)) {
     randomIndex = 0
   }
-
+  
   return (
     <Img
       style={{display: 'flex', alignSelf: 'flex-end'}}
@@ -40,7 +40,8 @@ function newImageOnLoad(images) {
   )
 }
 
-const Layout = ({ children, images }) => (
+const Layout = ({ children, images }) => {
+return (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -68,6 +69,7 @@ const Layout = ({ children, images }) => (
     )}
   />
 )
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

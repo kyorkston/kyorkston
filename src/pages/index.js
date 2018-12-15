@@ -1,13 +1,45 @@
 import React from 'react'
+import ReactLoading from 'react-loading'
+import styled from 'styled-components'
 
 import Layout from '../components/Layout/layout'
 import Bio from '../components/Bio/bio'
 
-const IndexPage = ({ data }) => (
-  <Layout images={data}>
-    <Bio />
-  </Layout>
-)
+const SpinnerContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`
+
+class IndexPage extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      loading: true
+    }
+  }
+
+  componentDidMount(){
+    this.setState({ loading: false })
+  }
+
+  render() {
+    return (
+      <div>
+        {
+          this.state.loading ? (
+            <SpinnerContainer>
+              <ReactLoading type={'spin'} color={'grey'} height={80} width={80} />
+            </SpinnerContainer>
+          ) : (
+            <Layout images={this.props.data} >
+              <Bio />
+            </Layout>
+          )
+        }
+      </div>
+    )
+  }
+}
 
 export default IndexPage
 
