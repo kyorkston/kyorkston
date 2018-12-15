@@ -1,15 +1,8 @@
 import React from 'react'
 import ReactLoading from 'react-loading'
-import styled from 'styled-components'
 
 import Layout from '../components/Layout/layout'
 import Bio from '../components/Bio/bio'
-
-const SpinnerContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  text-align: center;
-`
 
 class IndexPage extends React.Component {
   constructor(props){
@@ -28,9 +21,7 @@ class IndexPage extends React.Component {
       <div>
         {
           this.state.loading ? (
-            <SpinnerContainer>
-              <ReactLoading type={'spin'} color={'grey'} height={80} width={80} />
-            </SpinnerContainer>
+              <ReactLoading style={{ display: 'flex', justifyContent: 'center' }} type={'spin'} color={'grey'} height={80} width={80} />
           ) : (
             <Layout images={this.props.data} >
               <Bio />
