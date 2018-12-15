@@ -27,7 +27,7 @@ class IndexPage extends React.Component {
     return (
       <div>
         {
-          !this.state.loading ? (
+          this.state.loading ? (
             <SpinnerContainer>
               <ReactLoading type={'spin'} color={'grey'} height={80} width={80} />
             </SpinnerContainer>
