@@ -8,6 +8,7 @@ import Bio from '../components/Bio/bio'
 const SpinnerContainer = styled.div`
   display: flex;
   justify-content: center;
+  text-align: center;
 `
 
 class IndexPage extends React.Component {
@@ -26,7 +27,7 @@ class IndexPage extends React.Component {
     return (
       <div>
         {
-          this.state.loading ? (
+          !this.state.loading ? (
             <SpinnerContainer>
               <ReactLoading type={'spin'} color={'grey'} height={80} width={80} />
             </SpinnerContainer>
