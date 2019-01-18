@@ -5,29 +5,33 @@ import Layout from '../components/Layout/layout'
 import Bio from '../components/Bio/bio'
 
 class IndexPage extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
-      loading: true
+      loading: true,
     }
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.setState({ loading: false })
   }
 
   render() {
     return (
       <div>
-        {
-          this.state.loading ? (
-              <ReactLoading style={{ display: 'flex', justifyContent: 'center' }} type={'spin'} color={'grey'} height={80} width={80} />
-          ) : (
-            <Layout images={this.props.data} >
-              <Bio />
-            </Layout>
-          )
-        }
+        {this.state.loading ? (
+          <ReactLoading
+            style={{ display: 'flex', justifyContent: 'center' }}
+            type={'spin'}
+            color={'grey'}
+            height={80}
+            width={80}
+          />
+        ) : (
+          <Layout images={this.props.data}>
+            <Bio />
+          </Layout>
+        )}
       </div>
     )
   }
