@@ -11,10 +11,12 @@ const LinkList = styled.ul`
 const LinkItem = styled.a`
   padding-right: 10px;
   font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
 `
 
 const SmallLink = styled.a`
   text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
 `
 
 const LayoutFooter = () => (

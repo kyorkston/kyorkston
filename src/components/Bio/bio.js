@@ -7,7 +7,7 @@ const Paragraph = styled.p`
 
 const Bio = () => {
   return (
-    <div>
+    <div style={{ fontFamily: 'Montserrat, sans-serif' }}>
       <h2 style={{ fontWeight: '300' }}>
         A Frontend Engineer at FanDuel
         <br /> with an interest in full-stack.
