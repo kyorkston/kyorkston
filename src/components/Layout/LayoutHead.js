@@ -27,7 +27,7 @@ const LayoutHead = ({ data, children }) => (
       <Heading>{data.site.siteMetadata.title}</Heading>
       <LinkList>
         <LinkItem href="/">Home</LinkItem>
-        <LinkItem href="/blog">Blog</LinkItem>
+        <LinkItem href="/blog/25-12-2018">Blog</LinkItem>
       </LinkList>
       <div>-</div>
     </div>
