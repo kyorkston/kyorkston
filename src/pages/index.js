@@ -2,7 +2,7 @@ import React from 'react'
 import ReactLoading from 'react-loading'
 
 import Layout from '../components/Layout/layout'
-import Bio from '../components/Bio/bio'
+import Bio from '../components/Bio'
 
 class IndexPage extends React.Component {
   constructor(props) {
@@ -28,10 +28,10 @@ class IndexPage extends React.Component {
             width={80}
           />
         ) : (
-          <Layout images={this.props.data}>
-            <Bio />
-          </Layout>
-        )}
+            <Layout images={this.props.data}>
+              <Bio />
+            </Layout>
+          )}
       </div>
     )
   }

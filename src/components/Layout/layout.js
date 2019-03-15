@@ -62,7 +62,7 @@ const Layout = ({ children, images }) => {
             <html lang="en" />
           </Helmet>
           <div>
-            <LayoutHead data={data} children={children} />
+            <LayoutHead data={data.site.siteMetadata.title} children={children} />
             <LayoutFooter />
           </div>
           {images && newImageOnLoad(images)}

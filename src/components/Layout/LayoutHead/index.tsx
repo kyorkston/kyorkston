@@ -21,10 +21,10 @@ const LinkItem = styled.a`
   font-family: 'Montserrat', sans-serif;
 `
 
-const LayoutHead = ({ data, children }) => (
+const LayoutHead = ({ title, children }: { title: string, children: JSX.Element[] }) => (
   <div>
     <div>
-      <Heading>{data.site.siteMetadata.title}</Heading>
+      <Heading>{title}</Heading>
       <LinkList>
         <LinkItem href="/">Home</LinkItem>
         <LinkItem href="/blog">Blog</LinkItem>
