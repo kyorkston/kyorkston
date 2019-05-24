@@ -1,17 +1,13 @@
 import React from 'react'
-import styled from 'styled-components'
 
-const Paragraph = styled.p`
-  max-width: 525px;
-`
+import { Heading, Paragraph } from './styles'
 
-const Bio = () => {
+const Bio = (): JSX.Element => {
   return (
-    <div style={{ fontFamily: 'Montserrat, sans-serif' }}>
-      <h2 style={{ fontWeight: '300' }}>
-        A Frontend Engineer at FanDuel
-        <br /> with an interest in full-stack.
-      </h2>
+    <div>
+      <Heading>
+        A Software Engineer at FanDuel with an interest in full-stack.
+      </Heading>
       <Paragraph>
         With a love for working with computers since I was a kid it took me a
         while to discover my calling, after a stint at{' '}

@@ -8,8 +8,6 @@ import styled from 'styled-components'
 import LayoutHead from './LayoutHead'
 import LayoutFooter from './LayoutFooter'
 
-import './layout.css'
-
 const Container = styled.div`
   margin: 20px;
   display: flex;
@@ -62,7 +60,7 @@ const Layout = ({ children, images }) => {
             <html lang="en" />
           </Helmet>
           <div>
-            <LayoutHead data={data} children={children} />
+            <LayoutHead data={data.site.siteMetadata.title} children={children} />
             <LayoutFooter />
           </div>
           {images && newImageOnLoad(images)}
