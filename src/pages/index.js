@@ -1,40 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ReactLoading from 'react-loading'
 
 import Layout from '../components/Layout/layout'
-import Bio from '../components/Bio/bio'
+import Bio from '../components/Bio'
 
-class IndexPage extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      loading: true,
-    }
-  }
+const IndexPage = (props) => {
+  const [loading, setLoading] = useState(true)
 
-  componentDidMount() {
-    this.setState({ loading: false })
-  }
+  useEffect(() => {
+    setLoading(false)
+  }, [])
 
-  render() {
-    return (
-      <div>
-        {this.state.loading ? (
-          <ReactLoading
-            style={{ display: 'flex', justifyContent: 'center' }}
-            type={'spin'}
-            color={'grey'}
-            height={80}
-            width={80}
-          />
-        ) : (
-          <Layout images={this.props.data}>
+  return (
+    <div>
+      {loading ? (
+        <ReactLoading
+          style={{ display: 'flex', justifyContent: 'center' }}
+          type={'spin'}
+          color={'grey'}
+          height={80}
+          width={80}
+        />
+      ) : (
+          <Layout images={props.data}>
             <Bio />
           </Layout>
         )}
-      </div>
-    )
-  }
+    </div>
+  )
 }
 
 export default IndexPage
