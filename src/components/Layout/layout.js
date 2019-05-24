@@ -8,8 +8,6 @@ import styled from 'styled-components'
 import LayoutHead from './LayoutHead'
 import LayoutFooter from './LayoutFooter'
 
-import './layout.css'
-
 const Container = styled.div`
   margin: 20px;
   display: flex;
