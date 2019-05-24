@@ -10,14 +10,14 @@ export const LinkList = styled.ul`
 export const LinkItem = styled.a`
   padding-right: 10px;
   font-size: 16px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: sans-serif;
 `
 
 export const SmallLink = styled.a`
   text-transform: uppercase;
-  font-family: 'Montserrat', sans-serif;
+  font-family: sans-serif;
 `
 
 export const Footer = styled.footer`
-  font-weight: '300'
+  font-weight: '300';
 `

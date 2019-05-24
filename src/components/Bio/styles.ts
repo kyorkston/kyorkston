@@ -6,5 +6,6 @@ export const Paragraph = styled.p`
 
 export const Heading = styled.h2`
   max-width: 525px;
-  font-weight: 300
+  font-weight: 300;
+  font-family: sans-serif;
 `

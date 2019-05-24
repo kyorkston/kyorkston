@@ -4,7 +4,7 @@ import { Heading, Paragraph } from './styles'
 
 const Bio = (): JSX.Element => {
   return (
-    <div style={{ fontFamily: 'Montserrat, sans-serif' }}>
+    <div>
       <Heading>
         A Software Engineer at FanDuel with an interest in full-stack.
       </Heading>
