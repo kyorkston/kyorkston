@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ReactLoading from 'react-loading'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout/layout'
 import Bio from '../components/Bio'
